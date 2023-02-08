@@ -1,0 +1,17 @@
+.nav-link{
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover, .nav-link:focus{
+    transition: all 0.3s ease-in-out;
+    background: var(--primary-glow);
+    filter: drop-shadow(0px 0px 12px #ffbf00);
+    font-weight: 900;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shadow{
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  }

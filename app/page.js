@@ -2,7 +2,7 @@ import { Footer, Navbar } from '../components';
 import { About, Home, Cards } from '../sections';
 
 const Page = () => (
-  <div>
+  <div >
     <Navbar />
     <Home />
     <About />
@@ -12,3 +12,4 @@ const Page = () => (
 );
 
 export default Page;
+
