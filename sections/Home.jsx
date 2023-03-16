@@ -55,7 +55,7 @@ const Home = () => {
         priority={true}
       />
       <div className="relative py-16 flex justify-center items-center flex-col gap-10 md:gap-4 w-[90%] md:w-[50%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00]">
-        <h1 className="text-7xl md:text-[4.9rem] leading-[0.85] coming-soon text-center">
+        <h1 className="text-7xl max-[335px]:text-5xl md:text-[4.9rem] leading-[0.85] coming-soon text-center">
           COMING
           <br />
           SOON
