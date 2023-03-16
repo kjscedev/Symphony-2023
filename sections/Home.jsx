@@ -47,21 +47,22 @@ const Home = () => {
   return (
     <div className="h-screen z-0 flex items-center justify-center">
       <Image
-        src="/bg.png"
+        src="/bg-cropped.png"
         alt=""
         width={1920}
         height={1080}
         className="absolute w-full h-full top-0 object-cover object-top"
         priority={true}
+        draggable={false}
       />
-      <div className="relative py-16 flex justify-center items-center flex-col gap-10 md:gap-4 w-[90%] md:w-[50%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00]">
+      <div className="relative py-16 flex justify-center items-center flex-col gap-6 md:gap-5 w-[90%] md:w-[50%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00]">
         <h1 className="text-7xl max-[335px]:text-5xl md:text-[4.9rem] leading-[0.85] coming-soon text-center">
           COMING
           <br />
           SOON
         </h1>
         <form
-          className="flex flex-col gap-6 md:gap-3 justify-center items-center w-[80%] md:w-[50%]"
+          className="flex flex-col gap-6 md:gap-5 justify-center items-center w-[80%] md:w-[50%]"
           onSubmit={(e) => submit(e)}
         >
           <div className={`w-full p-0 m-0 neo-input h-10 transition-all duration-700 border-2 ${invalid? "border-[#ffc8007f]": "border-[rgba(193,193,193,0.14)]"}`}>
@@ -77,7 +78,7 @@ const Home = () => {
             />
           </div>
           <div
-            className={`p-[1.5px] h-10 bg-[linear-gradient(rgba(255,215,0,1),rgba(199,107,0,0.7))] transition-all duration-30000 overflow-hidden ${
+            className={`p-[1.5px] h-10 bg-[linear-gradient(rgba(255,215,0,1),rgba(199,107,0,0.7))] transition-all duration-300 overflow-hidden ${
               submitted ? "w-10 rounded-full" : " w-36 rounded-[6px]"
             }`}
           >
