@@ -15,7 +15,6 @@
 .neo-input{
   border-radius: 6px;
   overflow: hidden;
-  border: 2px solid rgba(193, 193, 193, 0.14);
 }
 :root {
   --max-width: 1100px;
