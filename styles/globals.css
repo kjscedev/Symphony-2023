@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities{
+  .font-family2{
+    font-family: var(--font-family2)
+  }
+}
+
+@layer components{
+}
+
+.neo-input{
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid rgba(193, 193, 193, 0.14);
+}
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -107,10 +122,14 @@ a {
 }
 
 .coming-soon{
-  transition: all 0.3s ease-in-out;
   background: var(--primary-glow);
   filter: drop-shadow(0px 0px 12px #ffbf00);
   font-weight: 900;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text{
+  background: var(--primary-glow);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

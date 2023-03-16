@@ -1,15 +1,16 @@
+"use client"
 import { Footer, Navbar, Pillar } from "../components";
 import { About, Home, Cards } from "../sections";
 
 const Page = () => (
   <>
-    <Pillar />
-    <Navbar />
+    {/* <Pillar /> */}
+    {/* <Navbar /> */}
     <div className="h-screen overflow-y-auto">
       <Home />
-      <About />
+      {/* <About />
       <Cards />
-      <Footer />
+      <Footer /> */}
     </div>
   </>
 );
