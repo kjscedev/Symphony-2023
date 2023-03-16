@@ -1,15 +1,17 @@
-import { Footer, Navbar } from '../components';
-import { About, Home, Cards } from '../sections';
+import { Footer, Navbar, Pillar } from "../components";
+import { About, Home, Cards } from "../sections";
 
 const Page = () => (
-  <div >
+  <>
+    <Pillar />
     <Navbar />
-    <Home />
-    <About />
-    <Cards/>
-    <Footer />
-  </div>
+    <div className="h-screen overflow-y-auto">
+      <Home />
+      <About />
+      <Cards />
+      <Footer />
+    </div>
+  </>
 );
 
 export default Page;
-

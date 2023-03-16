@@ -10,6 +10,7 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+  --accent-rgb: 199, 107, 0;
   --background-gradient:radial-gradient(57.81% 624.57% at 50% -245.69%, #1B1B1B 0%, #0F0F0F 61.87%, #000000 100%);
   --background-gradient2: radial-gradient(50.58% 377.59% at 51.18% -129.74%, #1B1B1B 0%, #0F0F0F 48.73%, #000000 100%)
   --primary-glow: linear-gradient(180deg, #FFD700 17.5%, rgba(199, 107, 0, 0.7) 157.5%);
@@ -42,11 +43,12 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
   color: rgb(var(--foreground-rgb));
-  background: var(--background-gradient);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  backdrop-filter: brightness(0.1);
+  overflow-y: hidden;
 }
 
 a {
@@ -92,3 +94,23 @@ a {
   bottom: -1px;
 }
 
+::-webkit-scrollbar {
+  width: 2.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-rgb), 0.3);
+}
+
+.coming-soon{
+  transition: all 0.3s ease-in-out;
+  background: var(--primary-glow);
+  filter: drop-shadow(0px 0px 12px #ffbf00);
+  font-weight: 900;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
