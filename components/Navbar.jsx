@@ -58,7 +58,7 @@ const Navbar = () => {
           RULES
         </a>
 
-        <div className="z-30 flex flex-col h-full min-[550px]:hidden">
+        <div className="z-30 flex-col h-full min-[550px]:hidden link-container">
           <a href="#" className="nav-link-mobile">
             HOME
           </a>

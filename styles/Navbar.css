@@ -17,7 +17,7 @@
 
 .navbar{
   height: 5rem;
-  transition: height 1s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
 .nav-link {
@@ -53,6 +53,12 @@
   /* display: none; */
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  pointer-events: none;
+}
+
+.link-container{
+  pointer-events: none;
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -81,7 +87,11 @@
   .opened {
     height: 100vh;
   }
+  .opened .link-container{
+    display: flex;
+  }
   .opened .nav-link-mobile {
     opacity: 1;
+    pointer-events: all;
   }
 }
