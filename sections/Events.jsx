@@ -275,10 +275,10 @@ export default function Events() {
   };
   return (
     <section
-      className="h-[200vh] flex flex-col justify-center items-center"
+      className="h-[200vh] flex flex-col justify-start items-center max-[1024px]:h-auto"
       id="events"
     >
-      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[75%]">
+      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[70%]">
         <div
           className="flex w-full justify-center items-center relative translate-y-5"
           onMouseMove={handleMouseMove}
@@ -334,9 +334,9 @@ export default function Events() {
           </p>
         </div>
       </div>
-      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] relative">
+      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] relative max-[675px]:w-full max-[1024px]:h-auto">
         <Modal isOpen={isOpen} onClose={handleCloseModal} children={children} />
-        <div className="grid grid-rows-2 grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center h-[95%] gap-y-10 max-[1200px]:h-[80%]">
+        <div className="grid grid-rows-2 grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center h-[95%] gap-x-2 gap-y-10 max-[1200px]:h-[80%] max-[1024px]:grid-cols-2 max-[1024px]:grid-rows-3 max-[1024px]:gap-y-5 max-[1024px]:h-auto max-[675px]:w-[80%] max-[675px]:grid-cols-1 max-[675px]:grid-rows-6">
           {events.map((event, index) => (
             <Cards
               name={event.name}

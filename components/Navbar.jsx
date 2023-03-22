@@ -5,8 +5,19 @@ import styles from "../styles";
 import "../styles/Navbar.css";
 import { navVariants } from "../utils/motion";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const Navbar = () => {
+  useEffect(()=>{
+    const nav = document.querySelectorAll(".nav-link-mobile");
+    nav.forEach((link) => {
+      console.log(link);
+      link.addEventListener("click", () => {
+        console.log("clicked");
+        document.querySelector(".navbar").classList.remove("opened");
+      });
+    })
+  },[])
   return (
     <motion.nav
       variants={navVariants}
@@ -18,7 +29,7 @@ const Navbar = () => {
       <div
         className={`${styles.innerWidth} mx-auto flex justify-between items-center gap-1 w-[70%] max-[1200px]:w-[80%] max-[782px]:w-[95%] max-[674px]:w-[100%] max-[550px]:flex-col`}
       >
-        <a href="#" className="nav-link">
+        <a href="#home" className="nav-link">
           HOME
         </a>
         <a href="#events" className="nav-link">
@@ -59,7 +70,7 @@ const Navbar = () => {
         </a>
 
         <div className="z-30 flex-col h-full min-[550px]:hidden link-container">
-          <a href="#" className="nav-link-mobile">
+          <a href="#home" className="nav-link-mobile">
             HOME
           </a>
           <a href="#events" className="nav-link-mobile">
