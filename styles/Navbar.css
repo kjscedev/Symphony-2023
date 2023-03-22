@@ -5,7 +5,7 @@
   left: 50%;
   transform: translate(-50%, 0%);
   width: 100%;
-  height: 200%;
+  height: 100px;
   background: url(../public/glow.png);
   z-index: 100;
   background-position: 0 70%;
@@ -13,6 +13,11 @@
   filter: hue-rotate(2deg);
   pointer-events: none;
   overflow: hidden;
+}
+
+.navbar{
+  height: 5rem;
+  transition: height 1s ease-in-out;
 }
 
 .nav-link {
@@ -33,4 +38,50 @@
 
 .shadow {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link-mobile{
+  width: 100%;
+  text-align: center;
+  background: var(--primary-glow);
+  font-weight: 900;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: x-large;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* display: none; */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .nav-link {
+    font-size: small;
+    width: 4.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-link {
+    font-size: small;
+    width: fit-content;
+  }
+
+  .navbar::after {
+    background-position: center;
+    height: 150%;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav-link {
+    display: none;
+  }
+  .opened {
+    height: 100vh;
+  }
+  .opened .nav-link-mobile {
+    opacity: 1;
+  }
 }

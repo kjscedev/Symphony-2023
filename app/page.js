@@ -6,7 +6,7 @@ const Page = () => (
   <>
     <Pillar />
     <Navbar />
-    <div className="h-screen overflow-y-auto">
+    <div className="h-screen overflow-y-auto overflow-x-hidden">
       <Home />
       <Events />
       {/* <About />
