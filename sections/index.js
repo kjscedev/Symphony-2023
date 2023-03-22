@@ -1,6 +1,5 @@
 import About from "./About";
-import Cards from "./Cards";
 import Home from "./Home";
+import Events from "./Events";
 
-
-export { About, Cards, Home };
+export { About, Home, Events };

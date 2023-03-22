@@ -18,6 +18,7 @@
 .nav-link {
   z-index: 10;
   transition: all 0.3s ease-in-out;
+  width: 6.31rem;
 }
 
 .nav-link:hover,

@@ -3,19 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities{
-  .font-family2{
+@layer utilities {
+  .font-family2 {
     font-family: var(--font-family2)
   }
 }
 
-@layer components{
-}
+@layer components {}
 
-.neo-input{
+.neo-input {
   border-radius: 6px;
   overflow: hidden;
 }
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -25,9 +25,8 @@
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
   --accent-rgb: 199, 107, 0;
-  --background-gradient:radial-gradient(57.81% 624.57% at 50% -245.69%, #1B1B1B 0%, #0F0F0F 61.87%, #000000 100%);
-  --background-gradient2: radial-gradient(50.58% 377.59% at 51.18% -129.74%, #1B1B1B 0%, #0F0F0F 48.73%, #000000 100%)
-  --primary-glow: linear-gradient(180deg, #FFD700 17.5%, rgba(199, 107, 0, 0.7) 157.5%);
+  --background-gradient: radial-gradient(57.81% 624.57% at 50% -245.69%, #1B1B1B 0%, #0F0F0F 61.87%, #000000 100%);
+  --background-gradient2: radial-gradient(50.58% 377.59% at 51.18% -129.74%, #1B1B1B 0%, #0F0F0F 48.73%, #000000 100%) --primary-glow: linear-gradient(180deg, #FFD700 17.5%, rgba(199, 107, 0, 0.7) 157.5%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,7 +34,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    --background-gradient:radial-gradient(57.81% 624.57% at 50% -245.69%, #1B1B1B 0%, #0F0F0F 61.87%, #000000 100%);
+    --background-gradient: radial-gradient(57.81% 624.57% at 50% -245.69%, #1B1B1B 0%, #0F0F0F 61.87%, #000000 100%);
     --primary-glow: linear-gradient(180deg, #FFD700 17.5%, rgba(199, 107, 0, 0.7) 157.5%);
   }
 }
@@ -44,6 +43,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -80,7 +80,7 @@ a {
   background: var(--background-gradient);
 }
 
-.background-image{
+.background-image {
   background-image: url('/background.jpg');
   background-size: cover;
   background-position: center;
@@ -88,7 +88,7 @@ a {
   background-attachment: fixed;
 }
 
-.background-image::before{
+.background-image::before {
   content: "";
   display: block;
   width: 100%;
@@ -98,7 +98,7 @@ a {
   opacity: 0.9;
 }
 
-.border-gradient::after{
+.border-gradient::after {
   content: "";
   display: block;
   width: 100%;
@@ -120,7 +120,7 @@ a {
   background: rgba(var(--accent-rgb), 0.3);
 }
 
-.coming-soon{
+.coming-soon {
   background: var(--primary-glow);
   filter: drop-shadow(0px 0px 12px #ffbf00);
   font-weight: 900;
@@ -128,28 +128,83 @@ a {
   -webkit-text-fill-color: transparent;
   animation: blink 8s infinite;
 }
-.gradient-text{
+
+.gradient-text {
   background: var(--primary-glow);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-@keyframes glow{
-  0%{
-    filter: drop-shadow(0px 0px 5px #ffbf00);
+
+.card {
+  background-image: linear-gradient(180deg, #FFD700 17.5%, rgba(199, 107, 0, 0.7) 157.5%);
+  padding: 1px;
+}
+
+.card>div {
+  background: radial-gradient(62.49% 50% at 50% 50%, #1F1F1F 0%, #0B0B0B 100%);
+  border-radius: 20px;
+}
+
+.card-container div p {
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, height 5s ease;
+}
+
+.card-container:has(:hover) div p {
+  height: auto;
+  opacity: 1;
+}
+
+.neumorphism-input{
+  box-shadow: inset 0px -2px 1px rgba(225, 225, 225, 0.09), inset 0px 4px 4px 1px rgba(0, 0, 0, 0.69);
+}
+
+.bordered-button {
+  background: linear-gradient(180deg, #FFD700 17.5%, rgba(199, 107, 0, 0.7) 157.5%);
+  padding: 1px;
+}
+.bordered-button button{
+  background-color: #111111;
+}
+.floating { 
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.glow{
+  animation-name: glow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 10px); }
+  100%   { transform: translate(0px, -0px); }   
+}
+@keyframes glow {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    filter: drop-shadow(0px 0px 5px transparent);
+    border-color: #FF8906;
   }
-  50%{
-    filter: drop-shadow(0px 0px 12px #ffbf00);
-  }
-  100%{
-    filter: drop-shadow(0px 0px 5px #ffbf00);
+  20%,
+  24%,
+  50% {
+    box-shadow: 0px 0px 2rem 0rem #ffbf006b,inset 0px 0px 2rem 0rem #ffbf006b;
+    border-color: #ffa600;
   }
 }
+
 @keyframes blink {
+
   20%,
   24%,
   55% {
     opacity: 0.5;
-    filter : none;
+    filter: none;
   }
 
   0%,
@@ -161,6 +216,6 @@ a {
   56%,
   100% {
     opacity: 1;
-  filter: drop-shadow(0px 0px 10px #ffbf00);
+    filter: drop-shadow(0px 0px 10px #ffbf00);
   }
 }
