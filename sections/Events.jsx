@@ -278,26 +278,26 @@ export default function Events() {
       className="h-[200vh] flex flex-col justify-center items-center"
       id="events"
     >
-      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16">
+      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[75%]">
         <div
           className="flex w-full justify-center items-center relative translate-y-5"
           onMouseMove={handleMouseMove}
         >
           <div className="absolute -top-[28%] w-[80%] left-1/2 -translate-x-1/2">
-            <h1 className="text-6xl uppercase pb-2">events in</h1>
-            <h1 className="text-7xl uppercase w-full text-center">
+            <h1 className="text-6xl uppercase pb-2 max-[1175px]:text-5xl">
+              events in
+            </h1>
+            <h1 className="text-7xl uppercase w-full text-center max-[1175px]:text-6xl">
               symphony 2023
             </h1>
           </div>
-          <p className="text-justify text-lg flex-[0.3]">
+          <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md">
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
             mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-            vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
-            ornare leo, non suscipit magna
+            fringilla,
           </p>
           <div
-            className="w-[400px] flex-[0.6] relative ease-in-out floating"
+            className="w-[24rem] flex-[0.6] relative floating max-[1175px]:w-[20rem] max-w-[1024px]:w-[18rem] max-w-[768px]:w-[14rem] max-w-[425px]:w-[10rem]"
             style={{
               transform: `translate(-${position.x / 70}px, -${
                 position.y / 70
@@ -309,11 +309,11 @@ export default function Events() {
               alt="crown"
               width={100}
               height={100}
-              className="absolute w-[380px] z-0 left-[45%] -translate-x-1/2 -bottom-6 blur-2xl opacity-80"
+              className="absolute w-[18rem] z-0 left-[45%] -translate-x-1/2 -bottom-6 blur-2xl opacity-80"
               draggable={false}
             />
             <div
-              className="absolute w-[350px] glow h-[350px] border-[#FF8906] border-[3px] rounded-full -bottom-7 right-[40%] translate-x-1/2"
+              className="absolute w-[21rem] glow h-[21rem] border-[#FF8906] border-[3px] rounded-full -bottom-7 right-[40%] translate-x-1/2 max-[1200px]:w-[18rem] max-[1200px]:h-[18rem] max-[1200px]:-bottom-5 max-[1024px]:w-[16rem] max-[1024px]:h-[16rem]"
               style={{
                 transform: `translateX(${50 + position.x / 700}%`,
               }}
@@ -323,22 +323,20 @@ export default function Events() {
               alt="crown"
               width={400}
               height={400}
-              className="m-auto w-[400px] z-10 relative"
+              className="m-auto w-[24rem] z-10 relative max-[1175px]:w-[20rem] max-[1024px]:w-[18rem]"
               draggable={false}
             />
           </div>
-          <p className="text-justify text-lg flex-[0.3]">
+          <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md">
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
             mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-            vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
-            ornare leo, non suscipit magna
+            fringilla,
           </p>
         </div>
       </div>
       <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] relative">
         <Modal isOpen={isOpen} onClose={handleCloseModal} children={children} />
-        <div className="grid grid-rows-2 grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center h-[95%] gap-y-10">
+        <div className="grid grid-rows-2 grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center h-[95%] gap-y-10 max-[1200px]:h-[80%]">
           {events.map((event, index) => (
             <Cards
               name={event.name}
