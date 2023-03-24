@@ -97,7 +97,7 @@
     pointer-events: all;
   }
   .navbar::after {
-    width: 200%;
+    background-size: 200%;
     opacity: 0.5;
   }
   .opened::after {
