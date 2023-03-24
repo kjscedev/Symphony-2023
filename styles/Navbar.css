@@ -50,7 +50,7 @@
   font-weight: 900;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: x-large;
+  font-size: large;
   padding-top: 1rem;
   padding-bottom: 1rem;
   /* display: none; */
@@ -115,5 +115,10 @@
 @media (max-width: 376px) {
   .navbar {
     height: 4rem;
+  }
+}
+@media (max-width: 280px) {
+  .navbar {
+    height: 3.2rem;
   }
 }

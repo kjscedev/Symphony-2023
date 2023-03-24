@@ -42,7 +42,7 @@ const Navbar = () => {
           <Image
             src="/logo1.png"
             alt="logo"
-            className="min-[550px]:w-full min-[550px]:h-full w-[40px] h-[40px] object-contain"
+            className="min-[550px]:w-full min-[550px]:h-full w-[40px] h-[40px] object-contain max-[280px]:w-[30px] max-[280px]:h-[30px]"
             width={50}
             height={50}
             priority="true"
@@ -51,7 +51,7 @@ const Navbar = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            className="fill-[#ffc265] w-10 h-10 min-[550px]:hidden"
+            className="fill-[#ffc265] w-10 h-10 min-[550px]:hidden max-[280px]:w-[25px] max-[280px]:h-[25px]"
             onClick={() => {
               document.querySelector(".navbar").classList.toggle("opened");
             }}
