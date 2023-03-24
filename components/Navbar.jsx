@@ -68,7 +68,7 @@ const Navbar = () => {
         <a href="#" className="nav-link">
           RULES
         </a>
-        <div className="h-[1px] w-screen inset-0 bg-[#ffd700] border-gradient shadow z-30 min-[550px]:hidden transition-all" />
+        <div className="h-[1px] w-screen inset-0 bg-[#ffd700] border-gradient shadow z-30 min-[550px]:hidden transition-all line" />
         <div className="z-30 flex flex-col h-full min-[550px]:hidden link-container gap-5 pt-5">
           <a href="#home" className="nav-link-mobile">
             HOME

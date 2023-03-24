@@ -62,7 +62,10 @@
 .link-container{
   pointer-events: none;
 }
-
+.line{
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out 0.5s;
+}
 @media (max-width: 1200px) {
   .nav-link {
     font-size: small;
@@ -101,6 +104,9 @@
     height: 50%;
     opacity: 0;
     width: 0%;
+  }
+  .opened .line{
+    opacity: 1;
   }
   .navbar {
     height: 4rem;
