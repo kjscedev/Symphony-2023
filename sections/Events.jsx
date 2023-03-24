@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Cards from "@/components/Cards";
 import { motion } from "framer-motion";
@@ -17,6 +17,11 @@ const Modal = ({ isOpen, onClose, children }) => {
   let [loading, setLoading] = useState(false);
   let [submitted, setSubmitted] = useState(false);
   let input = useRef(null);
+  useEffect(() => {
+    window.addEventListener("popstate", () => {
+      onClose();
+    });
+  }, []);
   return (
     <motion.div
       className="modal-overlay"
@@ -41,24 +46,24 @@ const Modal = ({ isOpen, onClose, children }) => {
       }}
     >
       <div
-        className="relative h-[450px] flex justify-center items-center w-[60%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00] overflow-hidden"
+        className="relative h-[29rem] flex justify-center items-center w-[60%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00] overflow-hidden max-[1250px]:w-[90%] max-[1250px]:h-[75%] max-[920px]:h-[60%] max-[790px]:w-[95%] max-[740px]:flex-col max-[740px]:w-[60%] max-[740px]:gap-8 max-[740px]:h-[80%] max-[655px]:w-[75%] max-[550px]:h-[100%] max-[550px]:w-[100%]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="h-full aspect-[7_/_10]">
+        <div className="h-full aspect-[7_/_10] max-[740px]:aspect-[10_/_7] max-[740px]:w-full max-[740px]:h-[40%] max-[740px]:flex-[0.4]">
           {children?.image && (
             <Image
               src={children?.image}
               alt="event"
               height={800}
               width={564}
-              className="h-full w-auto"
+              className="h-full w-auto max-[740px]:w-full max-[740px]:object-cover"
             />
           )}
         </div>
-        <div className="h-full flex flex-col justify-center font-family2 text-[#FFF1D6] px-10 gap-5">
+        <div className="h-full flex flex-col justify-center font-family2 text-[#FFF1D6] px-10 gap-5 max-[740px]:flex-[0.6] max-[740px]:justify-start max-[740px]:items-center max-[430px]:w-[92%] max-[430px]:p-0 max-[550px]:gap-8">
           <h1 className="text-2xl uppercase">{children?.name}</h1>
-          <p className="font-normal text-sm">{children?.long_description}</p>
-          <div className="flex justify-start items-center gap-5">
+          <p className="font-normal text-sm max-[740px]:text-justify">{children?.long_description}</p>
+          <div className="flex justify-start items-center gap-5 max-[550px]:w-[99%] max-[430px]:w-[99%] max-[550px]:justify-between">
             <div className="flex items-center justify-center">
               <svg
                 width="24"
@@ -113,7 +118,7 @@ const Modal = ({ isOpen, onClose, children }) => {
           </div>
 
           <form
-            className="flex h-10"
+            className="flex h-10 max-[550px]:w-[99%]"
             onSubmit={(e) => {
               e.preventDefault();
               setLoading(true);
@@ -149,7 +154,7 @@ const Modal = ({ isOpen, onClose, children }) => {
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
               ref={input}
-              className="h-full outline-none font-normal bg-[#D9D9D903] neumorphism-input rounded-l-[6px] pl-4 placeholder:text-sm placeholder:font-normal placeholder:text-[#8F8F8F]"
+              className="h-full outline-none font-normal bg-[#D9D9D903] neumorphism-input rounded-l-[6px] pl-4 placeholder:text-sm placeholder:font-normal placeholder:text-[#8F8F8F] max-[550px]:w-[95%]"
             />
             <div className="bordered-button h-full rounded-r-[6px] w-28">
               <button className="h-full outline-none rounded-r-[6px] w-full text-md p-1 ">
@@ -328,9 +333,11 @@ export default function Events() {
             />
           </div>
           <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">
-            <span className="min-[850px]:hidden">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla,</span>
+            <span className="min-[850px]:hidden">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+              fringilla,
+            </span>
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
             mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
             fringilla,
@@ -347,6 +354,7 @@ export default function Events() {
               image={event.image}
               key={index}
               onClick={() => {
+                window.location.href = "#eventcard";
                 setChildren(event);
                 handleOpenModal();
               }}
