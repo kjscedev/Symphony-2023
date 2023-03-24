@@ -101,7 +101,7 @@ a {
   content: "";
   display: block;
   width: 100%;
-  height: 1%;
+  height: 1px;
   background: var(--primary-glow);
   position: absolute;
   bottom: -1px;

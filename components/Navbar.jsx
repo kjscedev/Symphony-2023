@@ -27,7 +27,7 @@ const Navbar = () => {
     >
       <div className="absolute w-full inset-0 gradient-dark background-image border-gradient shadow" />
       <div
-        className={`${styles.innerWidth} mx-auto flex justify-between items-center gap-1 w-[70%] max-[1200px]:w-[80%] max-[782px]:w-[95%] max-[674px]:w-[100%] max-[550px]:flex-col`}
+        className={`${styles.innerWidth} mx-auto flex justify-between items-center gap-1 w-[70%] max-[1200px]:w-[80%] max-[782px]:w-[95%] max-[674px]:w-[100%] max-[550px]:flex-col max-[550px]:gap-4`}
       >
         <a href="#home" className="nav-link">
           HOME
@@ -40,7 +40,7 @@ const Navbar = () => {
         </a>
         <div className="max-[550px]:flex justify-between items-center max-[550px]:w-full z-30 min-[320px]:h-9">
           <Image
-            src="/logo.png"
+            src="/logo1.png"
             alt="logo"
             className="min-[550px]:w-full min-[550px]:h-full w-[40px] h-[40px] object-contain"
             width={50}
@@ -68,8 +68,8 @@ const Navbar = () => {
         <a href="#" className="nav-link">
           RULES
         </a>
-
-        <div className="z-30 flex-col h-full min-[550px]:hidden link-container">
+        <div className="h-[1px] w-screen inset-0 bg-[#ffd700] border-gradient shadow z-30 min-[550px]:hidden transition-all" />
+        <div className="z-30 flex-col h-full min-[550px]:hidden link-container gap-5 pt-5">
           <a href="#home" className="nav-link-mobile">
             HOME
           </a>

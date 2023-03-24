@@ -17,7 +17,7 @@
 
 .navbar{
   height: 4.3rem;
-  transition: height 0.5s ease-in-out;
+  transition: height 0.2s ease-in-out;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -55,13 +55,13 @@
   padding-bottom: 1rem;
   /* display: none; */
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   pointer-events: none;
 }
 
 .link-container{
   pointer-events: none;
-  display: none;
+  display: flex;
 }
 
 @media (max-width: 1200px) {
@@ -96,6 +96,10 @@
   .opened .nav-link-mobile {
     opacity: 1;
     pointer-events: all;
+  }
+  .opened::after {
+    height: 50%;
+    opacity: 0;
   }
   .navbar {
     height: 4rem;
