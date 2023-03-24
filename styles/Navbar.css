@@ -100,6 +100,7 @@
   .opened::after {
     height: 50%;
     opacity: 0;
+    width: 0%;
   }
   .navbar {
     height: 4rem;
