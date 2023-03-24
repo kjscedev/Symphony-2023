@@ -61,7 +61,6 @@
 
 .link-container{
   pointer-events: none;
-  display: flex;
 }
 
 @media (max-width: 1200px) {
@@ -89,9 +88,6 @@
   }
   .opened {
     height: 100vh !important;
-  }
-  .opened .link-container{
-    display: flex;
   }
   .opened .nav-link-mobile {
     opacity: 1;
