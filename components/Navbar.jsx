@@ -38,11 +38,11 @@ const Navbar = () => {
         <a href="#" className="nav-link">
           PRO-SHOWS
         </a>
-        <div className="max-[550px]:flex justify-between items-center max-[550px]:w-full z-30">
+        <div className="max-[550px]:flex justify-between items-center max-[550px]:w-full z-30 min-[320px]:h-9">
           <Image
             src="/logo.png"
             alt="logo"
-            className="w-[50px] h-[50px] object-contain"
+            className="min-[550px]:w-full min-[550px]:h-full w-[40px] h-[40px] object-contain"
             width={50}
             height={50}
             priority="true"

@@ -169,10 +169,10 @@ const Modal = ({ isOpen, onClose, children }) => {
                       {loading ? (
                         <>
                           <Image
-                            src={"/loader.gif"}
+                            src={"/loader1.gif"}
                             alt="loader"
-                            height={30}
-                            width={30}
+                            height={15}
+                            width={15}
                           />
                         </>
                       ) : (
@@ -305,7 +305,7 @@ export default function Events() {
             }}
           >
             <Image
-              src={"/crown.png"}
+              src={"/crown.webp"}
               alt="crown"
               width={100}
               height={100}
@@ -319,7 +319,7 @@ export default function Events() {
               }}
             ></div>
             <Image
-              src={"/crown.png"}
+              src={"/crown.webp"}
               alt="crown"
               width={400}
               height={400}
