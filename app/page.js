@@ -1,5 +1,5 @@
-"use client";
-import { useState, useEffect } from "react";
+"use client"
+import { useState } from "react";
 import Flags from "@/components/Flags";
 import { Footer, Navbar, Pillar } from "../components";
 import { About, Home, Events, Proshows } from "../sections";

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import {useState} from "react";
 import Image from "next/image";
 import { Fireworks } from "@fireworks-js/react";
 export default function Home(props) {
-  let [show, setShow] = React.useState(false);
+  let [show, setShow] = useState(false);
   return (
     <section
       className={`h-screen w-full flex justify-center items-center ${props?.className} relative`}

@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 export default function Flags(props) {
-  let [cflag, setCflag] = React.useState(`/${props.flag}.png`);
+  let [cflag, setCflag] = useState(`/${props.flag}.png`);
   useEffect(() => {
     let flag = document.querySelectorAll(".flag");
     flag.forEach((f) => {
@@ -12,7 +12,6 @@ export default function Flags(props) {
         f.classList.remove("enter_flag");
       }
     });
-    console.log("set flag");
     flag.forEach((f) => {
       f.classList.add("enter_flag");
       setTimeout(() => {
