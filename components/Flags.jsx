@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 export default function Flags(props) {
-  let [cflag, setCflag] = React.useState(`${props.flag}`);
+  let [cflag, setCflag] = React.useState(props.flag);
   useEffect(() => {
     let flag = document.querySelectorAll(".flag");
     flag.forEach((f) => {
@@ -30,7 +30,7 @@ export default function Flags(props) {
     >
       {props.flag !== "home" ? (
         <>
-          <img
+          <Image
             src={`/${cflag}.png`}
             alt="pillar"
             height={400}
@@ -38,7 +38,7 @@ export default function Flags(props) {
             priority={true}
             className="w-auto h-[30vh] pointer-events-none flag transition-all duration-300"
           />
-          <img
+          <Image
             src={`/${cflag}.png`}
             alt="pillar"
             height={400}
