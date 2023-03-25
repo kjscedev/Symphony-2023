@@ -28,25 +28,30 @@ export default function Flags(props) {
       transition={{ duration: 0.6, delay: 0.5 }}
       animate={{ opacity: 1 }}
     >
+      <div className="hidden">
+        <Image alt="flag" height={400} width={200} src={"/proshow.png"} />
+        <Image alt="flag" height={400} width={200} src={"/shield.png"} />
+        <Image alt="flag" height={400} width={200} src={"/syahi.png"} />
+      </div>
       {/* {cflag !== "/home.png" ? (
         <> */}
-          <img
-            src={cflag}
-            alt="pillar"
-            height={400}
-            width={200}
-            priority={true}
-            className="w-auto h-[30vh] pointer-events-none flag transition-all duration-300"
-          />
-          <img
-            src={cflag}
-            alt="pillar"
-            height={400}
-            width={200}
-            priority={true}
-            className="w-auto h-[30vh] pointer-events-none flag transition-all duration-300"
-          />
-        {/* </>
+      <Image
+        src={cflag}
+        alt="flag"
+        height={400}
+        width={200}
+        priority={true}
+        className={`w-auto h-[30vh] pointer-events-none flag transition-all duration-300`}
+      />
+      <Image
+        src={cflag}
+        alt="flag"
+        height={400}
+        width={200}
+        priority={true}
+        className="w-auto h-[30vh] pointer-events-none flag transition-all duration-300"
+      />
+      {/* </>
       ) : (
         <></>
       )} */}
