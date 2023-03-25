@@ -535,6 +535,8 @@ export default function Events(props) {
               height={400}
               className="m-auto w-[24rem] z-10 relative max-[1180px]:w-[21rem] max-[1024px]:w-[18rem]"
               draggable={false}
+              placeholder="blur"
+              blurDataURL="UJIqW2$y3FI@pxNdslxWPqR+I?ofEmsSw]R+"
             />
           </div>
           <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">

@@ -15,7 +15,7 @@ export default function Page() {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
 
-      if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+      if (scrollTop >= sectionTop && scrollTop < (sectionTop + sectionHeight+ 1000)) {
         setCurrentSection(section.id);
       }
     });

@@ -28,6 +28,12 @@ export default function Proshows(props) {
       className={`flex flex-col justify-start items-center h-screen max-[850px]:gap-10 ${props?.className}`}
       id="proshow"
       ref={sectionRef}
-    ></section>
+    >
+      <div className="flex flex-col justify-center items-center w-full h-full">
+        <h1 className="text-4xl font-bold text-center text-white">
+          Proshows
+        </h1>
+        </div>
+    </section>
   );
 }
