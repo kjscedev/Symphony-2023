@@ -30,7 +30,7 @@ export default function Flags(props) {
     >
       {/* {cflag !== "/home.png" ? (
         <> */}
-          <Image
+          <img
             src={cflag}
             alt="pillar"
             height={400}
@@ -38,7 +38,7 @@ export default function Flags(props) {
             priority={true}
             className="w-auto h-[30vh] pointer-events-none flag transition-all duration-300"
           />
-          <Image
+          <img
             src={cflag}
             alt="pillar"
             height={400}
