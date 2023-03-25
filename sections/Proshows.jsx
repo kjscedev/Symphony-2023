@@ -26,7 +26,7 @@ export default function Proshows(props) {
   return (
     <section
       className={`flex flex-col justify-start items-center h-screen max-[850px]:gap-10 ${props?.className}`}
-      id="proshow"
+      id="proshows"
       ref={sectionRef}
     >
       <div className="flex flex-col justify-center items-center w-full h-full">

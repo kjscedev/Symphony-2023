@@ -29,7 +29,7 @@ export default function Flags(props) {
       animate={{ opacity: 1 }}
     >
       <div className="hidden">
-        <Image alt="flag" height={400} width={200} src={"/proshow.png"} />
+        <Image alt="flag" height={400} width={200} src={"/proshows.png"} />
         <Image alt="flag" height={400} width={200} src={"/shield.png"} />
         <Image alt="flag" height={400} width={200} src={"/syahi.png"} />
       </div>
