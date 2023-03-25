@@ -11,9 +11,7 @@ const Navbar = () => {
   useEffect(()=>{
     const nav = document.querySelectorAll(".nav-link-mobile");
     nav.forEach((link) => {
-      console.log(link);
       link.addEventListener("click", () => {
-        console.log("clicked");
         document.querySelector(".navbar").classList.remove("opened");
       });
     })

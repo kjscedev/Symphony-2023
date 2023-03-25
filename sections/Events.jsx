@@ -46,7 +46,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       }}
     >
       <div
-        className="relative h-[29rem] flex justify-center items-center w-[60%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00] overflow-hidden max-[1250px]:w-[90%] max-[1250px]:h-[75%] max-[920px]:h-[60%] max-[790px]:w-[95%] max-[740px]:flex-col max-[740px]:w-[60%] max-[740px]:gap-8 max-[740px]:h-[80%] max-[655px]:w-[75%] max-[550px]:h-[100%] max-[550px]:w-[100%]"
+        className="relative h-[29rem] flex justify-center items-center w-[60%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00] overflow-hidden max-[1250px]:w-[90%] max-[1250px]:h-[75%] max-[920px]:h-[60%] max-[790px]:w-[95%] max-[740px]:flex-col max-[740px]:w-[60%] max-[740px]:gap-0 max-[740px]:h-[80%] max-[655px]:w-[75%] max-[550px]:h-[100%] max-[550px]:w-[100%] max-[550px]:border-none"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="h-full aspect-[7_/_10] max-[740px]:aspect-[10_/_7] max-[740px]:w-full max-[740px]:h-[40%] max-[740px]:flex-[0.4]">
@@ -60,10 +60,12 @@ const Modal = ({ isOpen, onClose, children }) => {
             />
           )}
         </div>
-        <div className="h-full flex flex-col justify-center font-family2 text-[#FFF1D6] px-10 gap-5 max-[740px]:flex-[0.6] max-[740px]:justify-start max-[740px]:items-center max-[430px]:w-[92%] max-[430px]:p-0 max-[550px]:gap-8">
+        <div className="h-full flex flex-col justify-center font-family2 overflow-y-auto text-[#FFF1D6] px-10 gap-5 max-[740px]:flex-[0.6] max-[740px]:justify-start max-[740px]:items-center max-[740px]:py-8 max-[430px]:w-[92%] max-[430px]:p-0 max-[550px]:gap-8">
           <h1 className="text-2xl uppercase">{children?.name}</h1>
-          <p className="font-normal text-sm max-[740px]:text-justify">{children?.long_description}</p>
-          <div className="flex justify-start items-center gap-5 max-[550px]:w-[99%] max-[430px]:w-[99%] max-[550px]:justify-between">
+          <p className="font-normal text-sm max-[740px]:text-justify">
+            {children?.long_description}
+          </p>
+          <div className="justify-start items-center gap-5 max-[550px]:w-[99%] max-[430px]:w-[99%] max-[550px]:justify-between hidden">
             <div className="flex items-center justify-center">
               <svg
                 width="24"
@@ -181,7 +183,7 @@ const Modal = ({ isOpen, onClose, children }) => {
                           />
                         </>
                       ) : (
-                        <>Invite Me</>
+                        <>Register</>
                       )}
                     </>
                   )}
@@ -194,73 +196,252 @@ const Modal = ({ isOpen, onClose, children }) => {
     </motion.div>
   );
 };
-export default function Events() {
+export default function Events(props) {
   let events = [
     {
-      name: "KK",
+      name: "PAiNT THE PiXEL",
       description:
-        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.  Exercitation veniam con...",
-      image: "/kk.png",
+        "Art is a captivating language that expresses the innermost feelings of an individual in a remarkable way. Create your own virtual masterpiece and showcase your creativity on the grandest stage of all.",
+      image: "/paint_the_pixel.png",
       date: "6th April",
       time: "10:00pm",
       location: "Gargi Plaza",
-      long_description:
-        "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum",
+      long_description: `ART iS THE ONLY iNAUDiBLE LANGUAGE
+    THAT TOUCHES THE iNNERMOST
+    FEELiNGS OF AN iNDiViDUAL AND
+    CONVEYS THEM iN THE MOST
+    BREATHTAKiNG MANNER
+    POSSiBLE...AND WHEN THE DEPTH OF
+    HUMAN EMOTiONS MEETS THE
+    COMPLEXiTY OF A COMPUTER, MAGIC iS
+    MATERiALiZED iN FRONT OF THE
+    AUDiENCES THAT FEEL THE ARTiST'S
+    iNNER CONUNDRUM WiTHOUT THE
+    TRANSFER OF ANY DiALOGUE! CREATE
+    YOUR OWN ViRTUAL MARVEL AT THiS
+    COLORFUL CONJUNCTURE AND FLAUNT
+    YOUR CREATiViTY ON THE BiGGEST
+    STAGE POSSiBLE!!`,
     },
     {
-      name: "Angelina",
+      name: "CRESCENDO",
       description:
-        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.  Exercitation veniam con...",
-      image: "/angelina.png",
+        "Join the second edition of Crescendo, a solo-instrumental competition where you can create your own symphony and set the stage on fire with your heartwarming tunes.",
+      image: "/crescendo.png",
       date: "5th April",
       time: "11:00pm",
       location: "Gargi Plaza",
-      long_description:
-        "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum",
+      long_description: `HAVE YOU EVER PONDERED UPON HOW
+      A GROUP OF SELECTED FEW
+      iNDiViDUALS MANAGES TO CREATE A
+      “SYMPHONY” OF THE HiGHEST CALiBER
+      SiNGLE- HANDEDLY?! IF SO, THEN THE
+      SECOND EDiTiON OF CRESCENDO, OUR
+      SOLO-iNSTRUMENTAL COMPETiTiON iS
+      THE DESTiNATiON FOR YOU! STORM THE
+      NiGHT BY CREATiNG A CRESCENDO OF
+      YOUR OWN AND SET THE STAGE ON FiRE
+      WiTH TUNES, STRAiGHT FROM YOUR
+      HEART!`,
     },
     {
-      name: "3-Direction",
+      name: "Symphony Idol",
       description:
-        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.  Exercitation veniam con...",
-      image: "/3direction.png",
+        "Express yourself through musical melodies closest to your heart and showcase your innate creativity on stage by participating in Symphony Idol, the perfect platform for talented individuals.",
+      image: "/symphony_idol.png",
       date: "6th April",
       time: "10:00pm",
       location: "Gargi Plaza",
-      long_description:
-        "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum",
+      long_description: `OVER THE YEARS, SYMPHONY HAS
+      ASSUMED THE CENTER STAGE iN
+      PRODUCiNG TALENTED iNDiViDUALS!
+      WiTH THE AMBiTiON OF PROViDiNG A
+      PERFECT PLATFORM FOR SUCH GiED
+      PERSONAS BURNiNG DEEP WiTHiN OUR
+      HEARTS, SYMPHONY IDOL WAS
+      FORMULATED! EXPRESS YOURSELF
+      THROUGH MUSiCAL MELODiES,
+      CLOSEST TO YOUR HEART AND
+      iLLUMiNATE THE STAGE WiTH YOUR
+      iNNATE SENSE OF CREATiViTY.`,
     },
     {
-      name: "china-town",
+      name: "feel the beat",
       description:
-        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.  Exercitation veniam con...",
-      image: "/china-town.png",
+        "Unleash your inner dancer and showcase your elegance and grace on the stage at Symphony's Solo Dancing Competition by immersing yourself in your favorite melodies. Register now and feel the beat!",
+      image: "/feel_the_beat.png",
       date: "6th April",
       time: "10:00pm",
       location: "Gargi Plaza",
-      long_description:
-        "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum",
+      long_description: `FEET THAT HAVE NEVER DANCED ARE
+      LiKE SENTENCES, WiTHOUT
+      PUNCTUATiON... LET YOUR FEET DO THE
+      TALKiNG AT THE SYMPHONY’S SOLO
+      DANCiNG COMPETiTiON, FEEL THE BEAT!
+      IMMERSE YOURSELF iN THE MELODiES
+      OF YOUR FAVORiTE SONG AT
+      SYMPHONY 2023. DANCE YOUR WAY
+      OUT OF THiS PARADiGM AND DAZZLE
+      THE MASSES WiTH YOUR ELEGANCE AND
+      GRACE. HOW LONG ARE YOU GOiNG TO
+      WAiT?! REGiSTER NOW!!`,
     },
     {
-      name: "doom classic",
+      name: "natsamrat",
       description:
-        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.  Exercitation veniam con...",
-      image: "/doom-classic.png",
+        "Hone your theatrical skills and outshine your peers by transcending the entire performance to newer heights through your unmatched charm and panache at Natsamrat, the perfect platform for aspiring actors.",
+      image: "/natsamrat.png",
       date: "6th April",
       time: "10:00pm",
       location: "Gargi Plaza",
-      long_description:
-        "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum",
+      long_description: `A SiNGLE ACTOR CAN TRANSCEND THE
+      ENTiRE PERFORMANCE TO NEWER
+      HEiGHTS THROUGH THEiR UNRiVALED
+      CHARM AND UNMATCHED PANACHE.
+      HONE YOUR THEATRiCAL SKiLLS THAT
+      CAN LEAVE THE AUDiENCE iN A STATE
+      OF AWE AND OUTSHiNE ALL YOUR
+      PEERS NATSAMRAT.`,
     },
     {
-      name: "project-91",
+      name: "verve",
       description:
-        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.  Exercitation veniam con...",
-      image: "/project91.png",
+        'Experience the magic of dance and showcase your skills at Somaiya\'s group dance competition "Verve" - where elegance meets power and fluidity meets fire!',
+      image: "/verve.png",
       date: "6th April",
       time: "10:00pm",
       location: "Gargi Plaza",
-      long_description:
-        "Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum",
+      long_description: `DANCERS DON'T NEED WiNGS TO FLY
+      FOR A REASON: THEiR ELEGANT BODY
+      MOVEMENTS AND POWERFUL
+      EXPRESSiONS ENCHANT AUDiENCES!
+      WE'RE BACK WiTH YET ANOTHER
+      REJUVENATiNG EPiSODE OF SOMAiYA'S
+      GROUP DANCE COMPETiTiON, "VERVE"!
+      FROM THE MOST FLUiD PERFORMANCES
+      TO THE ONES THAT SET THE STAGE
+      ABLAZE...WE'VE GOT iT ALL iN A SiNGLE
+      PLACE. LiVE OUT YOUR AMBiTiONS OF
+      CLiMBiNG TO THE TOP OF THE 'DANCE-
+      CHAiN' WiTH YOUR KiLLER
+      SKiLLS.REGiSTER YOUR TEAM AS SOON
+      AS POSSiBLE AND PROVE YOUR WORTH
+      AT VERVE 2023!`,
+    },
+    {
+      name: "udghosh",
+      description:
+        "Experience the rawest form of acting at Symphony's Udghosh, the street play event, and showcase a social or political issue with intense yet canonical portrayal.",
+      image: "/udghosh.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `UDGHOSH, the rawest form of acting and a major highlight in recent years, was absent from the first-ever online version of Symphony, leaving everyone with an empty feeling. However, Symphony has heard the requests and is pleased to announce that UDGHOSH will now be a part of its lineup. Bring out your drama team and megaphones to portray social/political issues in an intense yet canonical way.`,
+    },
+    {
+      name: "Decibels dj wars",
+      description:
+        "Join the coveted platform for aspiring DJs and showcase your skills in creating awesome beats to make the crowd fall in love with your downbeat at Symphony's DJ wars.",
+      image: "/decibels_dj_wars.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `IF YOU ADORE FABRiCATiNG AWESOME
+      BEATS AND ASPiRE TO BE THE BiGGEST
+      NAME iN THE DJ GAME, STEP UP ON
+      ONE OF THE MOST COVETED
+      PLATFORMS AND MAKE THE CROWD
+      FALL iN LOVE WiTH YOUR DOWNBEAT!
+      GRAB ONTO YOUR FAVOURiTE CANS,
+      WiPE THE DUST OFF YOUR TURNTABLES
+      & SERENADE THE AUDiENCE BY TURNiNG
+      UP THE DECiBELS!`,
+    },
+    {
+      name: "picture this photography",
+      description:
+        "Experience the power of photography and capture profound emotions through your lens at Symphony's photography event.",
+      image: "/picture_this_photograph.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `A GOOD SNAPSHOT KEEPS A MOMENT
+      THAT'S GONE FROM FADiNG AWAY. A
+      GOOD PHOTOGRAPH iS A STORY YOU
+      FAiL TO CONVEY iN WORDS... A GOOD
+      PiCTURE CAN CAUSE ANY iNDiViDUAL
+      TO iMMERSE THEMSELVES iN EMOTiONS
+      THEY SELDOM RARELY EXPERiENCE! THE
+      ATTRiBUTES OF THiS TANGiBLE FORM OF
+      MEMORiES SEEM ENDLESS; SO COME
+      FORTH AND WiTNESS THE PARADiGM OF
+      SYMPHONY UNFOLD iTS DEEPEST
+      SECRETS iN FRONT OF YOUR EYES.
+      CAPTURE MANY SUCH ARDENT
+      EMOTiONS THROUGH YOUR LENS AND
+      LET THE OTHERS FEEL THE SAME
+      PROFOUND EMOTiONS, COARSE
+      THROUGH THEiR VEiNS AS WELL!`,
+    },
+    {
+      name: "battle of bands",
+      description:
+        "Get ready to rock the stage and claim your fame at Symphony 2023, where you can showcase your musical talent and entice the crowd with your groovy tunes!",
+      image: "/battle_of_bands.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `ATTENTiON!! TO ALL THE AMATEUR/
+      SEMi-PRO BANDS OUT THERE, HERE’S
+      YOUR CHANCE TO MAKE THE CROWD
+      SWAY TO YOUR TUNES AND YOUR TUNES
+      ONLY! CLAiM YOUR FAME iN THiS EPiC
+      DUEL AND OUTPERFORM A MULTiTUDE
+      OF TALENTED, GROOVY BANDS
+      THROUGH SHEER GRiT AND DEXTERiTY.
+      ENTiCE THE METALHEADS AND ROCK
+      ENTHUSiASTS AT SYMPHONY 2023 AND
+      TRAP THEM iN A PARADiGM OF YOUR
+      OWN ACCORD, WHERE MUSiC iS KEY.`,
+    },
+    {
+      name: "ok doodle",
+      description:
+        "Unleash your creativity and showcase your doodling skills at OK Doodle for a chance to win exciting prizes!",
+      image: "/ok_doodle.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `IF THE LAST PAGE OF ALL YOUR
+      NOTEBOOKS iS FiLLED WiTH QUiRKY
+      CARiCATURES, AND iF YOU HAVE A
+      KNACK OF DOODLiNG DURiNG
+      MONOTONOUS MORNiNG LECTURES,
+      THEN OK DOODLE MiGHT BE JUST THE
+      PLACE FOR YOU TO SHOWCASE YOUR
+      SKiLLS.
+      DOODLE YOUR HEART OUT, AND STAND
+      A CHANCE TO WiN EXCiTiNG PRiZES!`,
+    },
+    {
+      name: "reel making",
+      description:
+        "Showcase your creativity and unique train of thought by participating in a Reel-making competition and win exciting prizes.",
+      image: "/reel_making.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `REELS ARE A UNiQUE ART FORM, A REEL CAN
+      iNSPiRE, PROVOKE DEEP THOUGHT OR LiFT
+      THE SPiRiTS AND ALL iN UNDER A MiNUTE.
+      DO YOU THiNK YOU HAVE THE CREATiViTY
+      AND THE UNiQUE TRAiN OF THOUGHT
+      REQUiRED TO COME OUT ON TOP iN THiS
+      COMPETiTiON? DO YOU OFTEN FiND
+      YOURSELF SCROLLiNG THROUGH SOCiAL
+      MEDiA, MAKiNG REELS WiTH YOUR FRiENDS
+      OR REMiXiNG EXiSTiNG ONES?
+      THEN SiGN UP!`,
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
@@ -278,12 +459,36 @@ export default function Events() {
   const handleMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
   };
+
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: document.querySelector("#scrollable-div"),
+        threshold: 0.5,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   return (
     <section
-      className="h-[200vh] flex flex-col justify-start items-center max-[1024px]:h-auto max-[850px]:gap-10"
+      className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className}`}
       id="events"
+      ref={sectionRef}
     >
-      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[70%] max-[850px]:w-[60%] max-[720px]:w-[80%] max-[530px]:w-[90%] max-[280px]:w-[95%] max-[850px]:h-max">
+      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[70%] max-[850px]:w-[60%] max-[720px]:w-[80%] max-[530px]:w-[90%] max-[280px]:w-[95%] max-[850px]:h-max lg:mt-28">
         <div
           className="flex w-full justify-center items-center relative translate-y-5 max-[850px]:flex-col max-[850px]:w-[90%] max-[850px]:gap-5 max-[850px]:h-max"
           onMouseMove={handleMouseMove}
@@ -344,9 +549,9 @@ export default function Events() {
           </p>
         </div>
       </div>
-      <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] relative max-[675px]:w-full max-[1024px]:h-auto">
+      <div className="h-auto border-white border-2- flex justify-center items-center w-[70%] relative max-[675px]:w-full max-[1024px]:h-auto">
         <Modal isOpen={isOpen} onClose={handleCloseModal} children={children} />
-        <div className="grid grid-rows-2 grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center h-[95%] gap-x-2 gap-y-10 max-[1200px]:h-[80%] max-[1024px]:grid-cols-2 max-[1024px]:grid-rows-3 max-[1024px]:gap-y-5 max-[1024px]:h-auto max-[675px]:w-[80%] max-[675px]:grid-cols-1 max-[675px]:grid-rows-6">
+        <div className="grid row-auto grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center gap-x-10 gap-y-10 max-[1200px]:h-[80%] max-[1100px]:gap-6 max-[1024px]:grid-cols-2 max-[1024px]:grid-rows-3 max-[1024px]:gap-y-5 max-[1024px]:h-auto max-[675px]:w-[80%] max-[550px]:grid-cols-1 max-[675px]:grid-rows-6">
           {events.map((event, index) => (
             <Cards
               name={event.name}

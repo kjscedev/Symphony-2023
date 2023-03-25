@@ -179,6 +179,22 @@ a {
   animation-timing-function: ease-in-out;
 }
 
+.elliptical_ring{
+  clip-path: ellipse(60vw 60vh at 50% 50%);
+}
+
+.flag{
+  transform: translateY(-100%);
+}
+
+.exit_flag{
+  transform: translateY(-100%) !important;
+}
+
+.enter_flag{
+  transform: translateY(0%);
+}
+
 @keyframes floating {
   0% { transform: translate(0,  0px); }
   50%  { transform: translate(0, 10px); }
