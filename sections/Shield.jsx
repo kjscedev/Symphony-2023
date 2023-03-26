@@ -11,7 +11,6 @@ import {
   getDocs,
   serverTimestamp,
 } from "firebase/firestore";
-import ComingSoon from "./ComingSoon";
 
 const Modal = ({ isOpen, onClose, children }) => {
   let [email, setEmail] = useState("");
@@ -197,8 +196,144 @@ const Modal = ({ isOpen, onClose, children }) => {
     </motion.div>
   );
 };
-export default function Proshows(props) {
-  // 
+export default function Shield(props) {
+  let events = [
+    {
+      name: "SHIELD ANTAKSHARI",
+      description:
+        "For all music enthusiasts among teachers and students, come and participate in this amalgamation of different forms of diverse music styles and genres in a captivating musical antakshari sing-off.",
+        image: "/shield_antak.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `Join along for Symphony Shield Antakshari and make everyone sway and hum along as you go
+      through the finger-biting experience of being in the hot seat.
+      A. Teams: 5 teams (branch wise) 4 participants + 1 teacher
+      B. Category- At-least 2 students from FY in each team
+      C. Genre/Style: Bollywood
+      D. Judging criteria: In case of a tie, we continue with the classic Antakshari round as the tie
+      breaker. Score criteria for all 3 rounds
+      A question is asked to the particular team:
+      . If answered: 10
+      . If failed to answer: 0 (question gets discarded)
+      . Team question moving fashion: COMPS IT EXCP/ETRX EXTC MECH`,
+    },
+    {
+      name: "SHIELD ART",
+      description:
+        "“Beneath the shades and the hues lies obscure imagery that speaks for itself” To all those aspiring artists out there, if you think you don’t get enough exposure or an appropriate platform to express your art then the Shield",
+        image: "/shield_art.png",
+      date: "5th April",
+      time: "11:00pm",
+      location: "Gargi Plaza",
+      long_description: `Art might just be the right platform for you to speak with your strokes.
+      So come pick up your brushes and pencils and change the view of that
+      empty canvas.
+      . Team: Solo.
+      . Category: Multiple participants from each branch is allowed. Minimum 1
+      participant from each branch is MANDATORY, branch failing to
+      do so will result in negative points.
+      . Genre/Style: Painting, Sketching and Mandala
+      . Rounds: 1
+      . Judging Criteria: Relevance to the Theme, Originality/Creativity, Detailing,
+      Layout and Overall Impact, Unity of Composition of Elements.`,
+    },
+    {
+      name: "SHIELD PHOTOGRAPHY",
+      description:
+        "“A photo not only captures a memory but also creates one.” If your camera equipment arsenal is bigger than any other, you see every scene in a frame, and can you not resist to capture the perfect lighting,then we at Shield Photography await to showcase your talent on a bigger platform.",
+      image: "/shield_photograph.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `Reduce the ISL and increase the shutter speed to increase the chances of
+      your branch to get on top.
+      . Team: Solo
+      . Category: Compulsory participation. 1 photo per branch per year.
+      . Genre/Style: Open
+      . Judging Criteria: Theme Incorporation, Composition, Naturality, Overall Impact`,
+    },
+    {
+      name: "Shield Drama",
+      description:
+        `"Great Theatre and Drama is about challenging how we think and encouraging us to imagine about a world we aspire to live in". Drama is both entertaining and thought-provoking, and has the power to move and inspire audiences.`,
+      image: "/shield_drama.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `Whether it's through the words of a playwright
+      or the performances of actors, drama has the ability to capture our imagination and touch
+      our hearts. So if you desire to make a change, and want your voice to be heard this is your
+      chance to participate in Shield Drama and help your branch win!!
+      . Team: 3-10 members.
+      . Category: Only one team from each branch is allowed. Minimum 1 team from each branch
+      is MANDATORY, branch failing to do so will result in negative points.
+      . Judging Criteria: Acting, Screenplay, Script, Overall Impact`,
+    },
+    {
+      name: "Shield Music",
+      description:
+        "“ Where words fail, music speaks.” — Hans Christian Andersen. As truly said Music is medicine, it is magic and has the power to bring people together, to tell stories, and to express emotions that may be difficult to put into words.",
+      image: "/shield_music.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `If you think with your melodies you can win hearts. This is your chance to make your
+      branch triumph in Shield Music!!
+      . Team: Minimum 3 and maximum 7 participants are allowed.
+      . Category: Both Hindi and English songs. Only one team from each branch is allowed.
+      . Genre/Style: Open
+      . Judging Criteria: Quality of vocals, Quality of instruments , Energy, Sync, Choice of songs,
+      Overall performance`,
+    },
+    {
+      name: "Shield Dance",
+      description:
+        "“Amidst the grooves and flips, lies a form of art not understood by many” Your moves and the way you glide will define your ability on the stage.",
+      image: "/shield_dance.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `Do you have what it takes to express this art? And can you take your branch to the top with
+      that?
+      . Team size: 10-15 members
+      . Category: Only one team from each branch is allowed. Minimum 1 team from each branch is
+      MANDATORY, branch failing to do so will result in negative points.
+      . Genre/Style: Open (All dance forms are allowed)
+      . Rounds: 2
+      . Judging Criteria:
+      Choreography
+      Energy
+      Sync
+      Expressions
+      Execution of technique
+      Solo Dance
+      Overall Performance
+      Run-time of 7-12 min`,
+    },
+    {
+      name: "SHIELD DEBATE",
+      description:
+        `“Don't raise your voice, improve your argument".― Desmond Tutu`,
+      image: "/shield_debate.png",
+      date: "6th April",
+      time: "10:00pm",
+      location: "Gargi Plaza",
+      long_description: `Prove your department's oratory genius in the battle of the most
+      revered form of the Speaking Arts. Ethos, Pathos, Logos. Dig deep
+      for that perfect riposte and bring all your arsenal to the battlefield
+      to test your debating acumen and emerge as the ultimate champions
+      of language and wit.
+      
+      . General Rules:
+      . Teams: TBD
+      . Category: British Parliamentary format.
+      . Style: British Parliamentary
+      . Elimination rounds and Semi Finals will be a week prior to Symphony.
+      . Finals will be held during Symphony.`,
+    },
+   
+  ];
   const [isOpen, setIsOpen] = useState(false);
   const [children, setChildren] = useState();
 
@@ -240,7 +375,7 @@ export default function Proshows(props) {
   return (
     <section
       className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className}`}
-      id="proshows"
+      id="shield"
       ref={sectionRef}
     >
       <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[70%] max-[850px]:w-[60%] max-[720px]:w-[80%] max-[530px]:w-[90%] max-[280px]:w-[95%] max-[850px]:h-max lg:mt-28">
@@ -250,14 +385,15 @@ export default function Proshows(props) {
         >
           <div className="absolute -top-[28%] w-[80%] left-1/2 -translate-x-1/2 max-[850px]:relative max-[850px]:translate-x-0 max-[850px]:left-0 max-[850px]:w-full">
             <h1 className="text-6xl uppercase pb-2 max-[1175px]:text-5xl max-[850px]:text-4xl max-[530px]:text-3xl max-[280px]:text-2xl">
-              ProShows in
+              Shield in
             </h1>
             <h1 className="text-7xl uppercase w-full text-center max-[1175px]:text-6xl max-[850px]:text-5xl max-[530px]:text-left max-[530px]:text-4xl max-[280px]:text-3xl">
               symphony 2023
             </h1>
           </div>
           <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[850px]:hidden">
-          KK Live, Aadar Malik, Nishant Suri, The Yellow Diary, Project 91, Anubhav Bassi, Benny Dayal Live & Rahul Dua you name it! Symphony has been hosting the finest singers, comedians, and bands since 1987!
+          KJSCE Shield comprises of the Technical Shield, Indoor and Outdoor Sports Shield and the Cultural Shield.
+          Throughout the year, all the five branches compete against each other to prove their mettle and claim the shield for themselves.
           </p>
           <div
             className="w-[24rem] flex-[0.6] relative floating max-[1175px]:w-[20rem] max-w-[1024px]:w-[18rem] max-w-[768px]:w-[14rem] max-w-[425px]:w-[10rem] max-[850px]:mb-5 max-[280px]:w-[12rem]"
@@ -268,7 +404,7 @@ export default function Proshows(props) {
             }}
           >
             <Image
-              src={"/mic.png"}
+              src={"/badge.png"}
               alt="mic"
               width={100}
               height={100}
@@ -276,13 +412,13 @@ export default function Proshows(props) {
               draggable={false}
             />
             <div
-              className="absolute w-[20rem] glowSilver h-[20rem] border-[#eaeaea] border-[3px] rounded-full -bottom-7 right-[40%] translate-x-1/2 max-[1200px]:w-[18rem] max-[1200px]:h-[18rem] max-[1200px]:-bottom-5 max-[1024px]:w-[16rem] max-[1024px]:h-[16rem] max-[280px]:w-[12rem] max-[280px]:h-[12rem]"
+              className="absolute w-[21rem] glowSilver h-[21rem] border-[#eaeaea] border-[3px] rounded-full -bottom-7 right-[40%] translate-x-1/2 max-[1200px]:w-[18rem] max-[1200px]:h-[18rem] max-[1200px]:-bottom-5 max-[1024px]:w-[16rem] max-[1024px]:h-[16rem] max-[280px]:w-[12rem] max-[280px]:h-[12rem]"
               style={{
                 transform: `translateX(${50 + position.x / 700}%`,
               }}
             ></div>
             <Image
-              src={"/mic.png"}
+              src={"/badge.png"}
               alt="mic"
               width={400}
               height={400}
@@ -294,14 +430,29 @@ export default function Proshows(props) {
           </div>
           <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">
             <span className="min-[850px]:hidden">
-            From iconic performances to memorable laughs, Symphony continues to bring top-notch talent and unforgettable experiences to audiences for over three decades!
+            While the indoor shield and the Outdoor shield takes place throughout the year, the technical shield takes place during Abhiyantriki and the Cultural Shield during Symphony.
             </span>
-            From iconic performances to memorable laughs, Symphony continues to bring top-notch talent and unforgettable experiences to audiences for over three decades!
+            While the indoor shield and the Outdoor shield takes place throughout the year, the technical shield takes place during Abhiyantriki and the Cultural Shield during Symphony.
           </p>
         </div>
       </div>
       <div className="h-auto border-white border-2- flex justify-center items-center w-[70%] relative max-[675px]:w-full max-[1024px]:h-auto">
-        <ComingSoon/>
+        <Modal isOpen={isOpen} onClose={handleCloseModal} children={children} />
+        <div className="grid row-auto grid-cols-3 w-[90%] justify-center items-center content-center justify-items-center gap-x-10 gap-y-10 max-[1200px]:h-[80%] max-[1100px]:gap-6 max-[1024px]:grid-cols-2 max-[1024px]:grid-rows-3 max-[1024px]:gap-y-5 max-[1024px]:h-auto max-[675px]:w-[80%] max-[550px]:grid-cols-1 max-[675px]:grid-rows-6">
+          {events.map((event, index) => (
+            <Cards
+              name={event.name}
+              description={event.description}
+              image={event.image}
+              key={index}
+              onClick={() => {
+                window.location.href = "#eventcard";
+                setChildren(event);
+                handleOpenModal();
+              }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

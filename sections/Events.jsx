@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { Rules } from "@/components";
 import Cards from "@/components/Cards";
 import { motion } from "framer-motion";
 import { db } from "@/utils/firebase";
@@ -446,6 +447,7 @@ export default function Events(props) {
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [children, setChildren] = useState();
+  const [isRulesOpen, setIsRulesOpen] = useState(false);
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -466,13 +468,15 @@ export default function Events(props) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsRulesOpen(true);
+        }
       },
       {
         root: document.querySelector("#scrollable-div"),
         threshold: 0.5,
       }
     );
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
@@ -502,9 +506,7 @@ export default function Events(props) {
             </h1>
           </div>
           <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[850px]:hidden">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla,
+          Symphony conducts a variety of events and competitions ranging from celebrity pro-shows to music, dance, art, creative writing, debating, drama and quizzing competitions.
           </p>
           <div
             className="w-[24rem] flex-[0.6] relative floating max-[1175px]:w-[20rem] max-w-[1024px]:w-[18rem] max-w-[768px]:w-[14rem] max-w-[425px]:w-[10rem] max-[850px]:mb-5 max-[280px]:w-[12rem]"
@@ -541,13 +543,9 @@ export default function Events(props) {
           </div>
           <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">
             <span className="min-[850px]:hidden">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla,
+            These diverse events and competitions provide a platform for participants to showcase their talents, engage in friendly rivalry, and foster a vibrant cultural exchange
             </span>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-            mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla,
+            These diverse events and competitions provide a platform for participants to showcase their talents, engage in friendly rivalry, and foster a vibrant cultural exchange
           </p>
         </div>
       </div>
@@ -567,6 +565,7 @@ export default function Events(props) {
               }}
             />
           ))}
+          <Rules isOpen={isRulesOpen} onClose={() => setIsRulesOpen(false)} />
         </div>
       </div>
     </section>

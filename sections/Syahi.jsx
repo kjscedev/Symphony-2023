@@ -197,7 +197,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     </motion.div>
   );
 };
-export default function Proshows(props) {
+export default function Syahi(props) {
   // 
   const [isOpen, setIsOpen] = useState(false);
   const [children, setChildren] = useState();
@@ -240,7 +240,7 @@ export default function Proshows(props) {
   return (
     <section
       className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className}`}
-      id="proshows"
+      id="syahi"
       ref={sectionRef}
     >
       <div className="h-screen border-white border-2- flex justify-center items-center w-[70%] gap-16 max-[1024px]:w-[70%] max-[850px]:w-[60%] max-[720px]:w-[80%] max-[530px]:w-[90%] max-[280px]:w-[95%] max-[850px]:h-max lg:mt-28">
@@ -250,7 +250,7 @@ export default function Proshows(props) {
         >
           <div className="absolute -top-[28%] w-[80%] left-1/2 -translate-x-1/2 max-[850px]:relative max-[850px]:translate-x-0 max-[850px]:left-0 max-[850px]:w-full">
             <h1 className="text-6xl uppercase pb-2 max-[1175px]:text-5xl max-[850px]:text-4xl max-[530px]:text-3xl max-[280px]:text-2xl">
-              ProShows in
+              Syahi in
             </h1>
             <h1 className="text-7xl uppercase w-full text-center max-[1175px]:text-6xl max-[850px]:text-5xl max-[530px]:text-left max-[530px]:text-4xl max-[280px]:text-3xl">
               symphony 2023
@@ -268,22 +268,22 @@ export default function Proshows(props) {
             }}
           >
             <Image
-              src={"/mic.png"}
-              alt="mic"
+              src={"/pen.png"}
+              alt="pen"
               width={100}
               height={100}
               className="absolute w-[18rem] z-0 left-[45%] -translate-x-1/2 -bottom-6 blur-2xl opacity-80"
               draggable={false}
             />
             <div
-              className="absolute w-[20rem] glowSilver h-[20rem] border-[#eaeaea] border-[3px] rounded-full -bottom-7 right-[40%] translate-x-1/2 max-[1200px]:w-[18rem] max-[1200px]:h-[18rem] max-[1200px]:-bottom-5 max-[1024px]:w-[16rem] max-[1024px]:h-[16rem] max-[280px]:w-[12rem] max-[280px]:h-[12rem]"
+              className="absolute w-[21rem] glow h-[21rem] border-[#eaeaea] border-[3px] rounded-full -bottom-7 right-[40%] translate-x-1/2 max-[1200px]:w-[18rem] max-[1200px]:h-[18rem] max-[1200px]:-bottom-5 max-[1024px]:w-[16rem] max-[1024px]:h-[16rem] max-[280px]:w-[12rem] max-[280px]:h-[12rem]"
               style={{
                 transform: `translateX(${50 + position.x / 700}%`,
               }}
             ></div>
             <Image
-              src={"/mic.png"}
-              alt="mic"
+              src={"/pen.png"}
+              alt="pen"
               width={400}
               height={400}
               className="m-auto w-[24rem] z-10 relative max-[1180px]:w-[21rem] max-[1024px]:w-[18rem]"

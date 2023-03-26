@@ -178,6 +178,12 @@ a {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
+.glowSilver{
+  animation-name: glow-silver;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
 
 .elliptical_ring{
   clip-path: ellipse(60vw 60vh at 50% 50%);
@@ -203,13 +209,25 @@ a {
 @keyframes glow {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     filter: drop-shadow(0px 0px 5px transparent);
-    border-color: #FF8906;
+    border-color: #df7000;
   }
   20%,
   24%,
   50% {
     box-shadow: 0px 0px 2rem 0rem #ffbf006b,inset 0px 0px 2rem 0rem #ffbf006b;
     border-color: #ffa600;
+  }
+}
+@keyframes glow-silver{
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    filter: drop-shadow(0px 0px 5px transparent);
+    border-color: #919191;
+  }
+  20%,
+  24%,
+  50% {
+    box-shadow: 0px 0px 2rem 0rem #ffffff6b,inset 0px 0px 2rem 0rem #ffffff6b;
+    border-color: #ffffff;
   }
 }
 

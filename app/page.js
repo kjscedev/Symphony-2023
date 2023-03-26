@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Flags from "@/components/Flags";
 import { Footer, Navbar, Pillar } from "../components";
-import { About, Home, Events, Proshows } from "../sections";
+import { About, Home, Events, Proshows, Shield, Syahi , Parvaah} from "../sections";
 
 export default function Page() {
   const [currentSection, setCurrentSection] = useState("home");
@@ -29,9 +29,10 @@ export default function Page() {
         <Home className="section" onSectionChange={setCurrentSection} sectionChange={currentSection}/>
         <Events className="section" onSectionChange={setCurrentSection}/>
         <Proshows className="section" onSectionChange={setCurrentSection}/>
-        {/* <About />
-      <Cards />
-    <Footer /> */}
+        <Shield className="section" onSectionChange={setCurrentSection}/>
+      <Syahi className="section" onSectionChange={setCurrentSection}/>
+      <Parvaah className="section" onSectionChange={setCurrentSection}/>
+    <Footer className="section" onSectionChange={setCurrentSection} />
       </div>
     </>
   );

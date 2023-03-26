@@ -31,7 +31,7 @@ const Navbar = () => {
         <a href="#events" className="nav-link">
           EVENTS
         </a>
-        <a href="#" className="nav-link">
+        <a href="#proshows" className="nav-link">
           PRO-SHOWS
         </a>
         <div className="max-[550px]:flex justify-between items-center max-[550px]:w-full z-30 min-[320px]:h-9">
@@ -55,15 +55,16 @@ const Navbar = () => {
             <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
           </svg>
         </div>
-        <a href="#" className="nav-link">
+        <a href="#shield" className="nav-link">
           SHIELD
         </a>
-        <a href="#" className="nav-link">
+        <a href="#syahi" className="nav-link">
           SYAHI
         </a>
-        <a href="#" className="nav-link">
-          RULES
+        <a href="#sponsors" className="nav-link">
+          SPONSORS
         </a>
+        
         <div className="h-[1px] w-screen inset-0 bg-[#ffd700] border-gradient shadow z-30 min-[550px]:hidden transition-all line" />
         <div className="z-30 flex flex-col h-full min-[550px]:hidden link-container gap-5 pt-5">
           <a href="#home" className="nav-link-mobile">
@@ -72,17 +73,17 @@ const Navbar = () => {
           <a href="#events" className="nav-link-mobile">
             EVENTS
           </a>
-          <a href="#" className="nav-link-mobile">
+          <a href="#proshows" className="nav-link-mobile">
             PRO-SHOWS
           </a>
-          <a href="#" className="nav-link-mobile">
+          <a href="#shield" className="nav-link-mobile">
             SHIELD
           </a>
-          <a href="#" className="nav-link-mobile">
+          <a href="#syahi" className="nav-link-mobile">
             SYAHI
           </a>
-          <a href="#" className="nav-link-mobile">
-            RULES
+          <a href="#sponsors" className="nav-link-mobile">
+            SPONSORS
           </a>
         </div>
       </div>
