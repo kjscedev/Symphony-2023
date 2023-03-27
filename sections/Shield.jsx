@@ -148,45 +148,20 @@ const Modal = ({ isOpen, onClose, children }) => {
               });
             }}
           >
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              placeholder="Enter your email"
-              onChange={(e) => setEmail(e.target.value)}
-              ref={input}
-              className="h-full outline-none font-normal bg-[#D9D9D903] neumorphism-input rounded-l-[6px] pl-4 placeholder:text-sm placeholder:font-normal placeholder:text-[#8F8F8F] max-[550px]:w-[95%]"
-            />
-            <div className="bordered-button h-full rounded-r-[6px] w-28">
-              <button className="h-full outline-none rounded-r-[6px] w-full text-md p-1 ">
+            <div className="bordered-button h-full rounded-[6px] w-28">
+              <button className="h-full outline-none rounded-[6px] w-full text-md p-1 "
+              onClick={
+  
+                () => {
+                  // redirect to a new window with the url
+                  window.location.href = " https://forms.gle/CuvZS52XrtPbkm6q7";
+                }
+              }
+              >
                 <span className="gradient-text flex justify-center items-center">
-                  {submitted ? (
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        className="h-5 w-5 fill-[#ffbf00]"
-                      >
-                        <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-                      </svg>
-                    </>
-                  ) : (
-                    <>
-                      {loading ? (
-                        <>
-                          <Image
-                            src={"/loader1.gif"}
-                            alt="loader"
-                            height={15}
-                            width={15}
-                          />
-                        </>
-                      ) : (
-                        <>Register</>
-                      )}
-                    </>
-                  )}
+                  
+                        Register
+                
                 </span>
               </button>
             </div>
