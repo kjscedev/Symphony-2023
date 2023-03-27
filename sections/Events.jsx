@@ -36,6 +36,17 @@ const Modal = ({ isOpen, onClose, children }) => {
                 className="relative h-[29rem] flex justify-center items-center w-[60%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00] overflow-hidden max-[1250px]:w-[90%] max-[1250px]:h-[75%] max-[920px]:h-[60%] max-[790px]:w-[95%] max-[740px]:flex-col max-[740px]:w-[60%] max-[740px]:gap-0 max-[740px]:h-[80%] max-[655px]:w-[75%] max-[550px]:h-[100%] max-[550px]:w-[100%] max-[550px]:border-none"
                 onClick={(e) => e.stopPropagation()}
             >
+                <div className="absolute top-2 left-2"
+                    onClick={() => onClose()}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                        className="w-[2rem] h-[2rem] cursor-pointer fill-white"
+                    >
+                        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+                </div>
                 <div className="h-full aspect-[7_/_10] max-[740px]:aspect-[10_/_7] max-[740px]:w-full max-[740px]:h-[40%] max-[740px]:flex-[0.4]">
                     {children?.image && (
                         <Image
@@ -44,10 +55,11 @@ const Modal = ({ isOpen, onClose, children }) => {
                             height={800}
                             width={564}
                             className="h-full w-auto max-[740px]:w-full max-[740px]:object-cover"
+                            priority={true}
                         />
                     )}
                 </div>
-                <div className="h-full flex flex-col justify-center font-family2 overflow-y-auto text-[#FFF1D6] px-10 gap-5 max-[740px]:flex-[0.6] max-[740px]:justify-start max-[740px]:items-center max-[740px]:py-8 max-[430px]:w-[92%] max-[430px]:p-0 max-[550px]:gap-8">
+                <div className="h-full flex flex-col justify-center font-family2 overflow-y-auto text-[#FFF1D6] px-10 gap-5 max-[740px]:flex-[0.6] max-[740px]:justify-start max-[740px]:items-center max-[740px]:py-8 max-[430px]:w-[92%] max-[430px]:p-4 max-[550px]:gap-8">
                     <h1 className="text-2xl uppercase">{children?.name}</h1>
                     <p className="font-normal text-sm max-[740px]:text-justify">
                         {children?.long_description}

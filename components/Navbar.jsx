@@ -4,9 +4,8 @@ import "../styles/Navbar.css";
 import { navVariants } from "../utils/motion";
 import Image from "next/image";
 import { useEffect } from "react";
-import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = (props) => {
     useEffect(() => {
         const nav = document.querySelectorAll(".nav-link-mobile");
         nav.forEach((link) => {
@@ -26,9 +25,9 @@ const Navbar = () => {
             <div
                 className={`${styles.innerWidth} mx-auto flex justify-between items-center gap-1 w-[70%] max-[1200px]:w-[80%] max-[782px]:w-[95%] max-[674px]:w-[100%] max-[550px]:flex-col max-[550px]:gap-4`}
             >
-                <Link href="rules" className="nav-link">
+                <button className="nav-link" onClick={(e) => props.open()}>
                     RULES
-                </Link>
+                </button>
                 <a href="#events" className="nav-link">
                     EVENTS
                 </a>
@@ -73,9 +72,12 @@ const Navbar = () => {
 
                 <div className="h-[1px] w-screen inset-0 bg-[#ffd700] border-gradient shadow z-30 min-[550px]:hidden transition-all line" />
                 <div className="z-30 flex flex-col h-full min-[550px]:hidden link-container gap-5 pt-5">
-                    <a href="rules" className="nav-link-mobile">
+                    <button
+                        className="nav-link-mobile"
+                        onClick={(e) => props.open()}
+                    >
                         RULES
-                    </a>
+                    </button>
                     <a href="#events" className="nav-link-mobile">
                         EVENTS
                     </a>
