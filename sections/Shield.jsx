@@ -2,21 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Cards from "@/components/Cards";
 import { motion } from "framer-motion";
-import { db } from "@/utils/firebase";
-import {
-  addDoc,
-  collection,
-  query,
-  where,
-  getDocs,
-  serverTimestamp,
-} from "firebase/firestore";
 
 const Modal = ({ isOpen, onClose, children }) => {
-  let [email, setEmail] = useState("");
-  let [loading, setLoading] = useState(false);
-  let [submitted, setSubmitted] = useState(false);
-  let input = useRef(null);
   useEffect(() => {
     window.addEventListener("popstate", () => {
       onClose();
@@ -56,6 +43,7 @@ const Modal = ({ isOpen, onClose, children }) => {
               alt="event"
               height={800}
               width={564}
+              priority={true}
               className="h-full w-auto max-[740px]:w-full max-[740px]:object-cover"
             />
           )}
@@ -123,45 +111,18 @@ const Modal = ({ isOpen, onClose, children }) => {
             className="flex h-10 max-[550px]:w-[99%]"
             onSubmit={(e) => {
               e.preventDefault();
-              setLoading(true);
-              let waitlistRef = query(
-                collection(db, "events"),
-                where("email", "==", email),
-                where("event", "==", children.name)
-              );
-              getDocs(waitlistRef).then((doc) => {
-                if (doc.docs.length === 0) {
-                  addDoc(collection(db, "events"), {
-                    event: children?.name,
-                    email: e.target.email.value.trim(),
-                    timestamp: serverTimestamp(),
-                  });
-                  setSubmitted(true);
-                } else {
-                  input.current.value = "Email already registered!";
-                }
-                setTimeout(() => {
-                  setSubmitted(false);
-                  setLoading(false);
-                  input.current.value = "";
-                }, 2000);
-              });
             }}
           >
             <div className="bordered-button h-full rounded-[6px] w-28">
-              <button className="h-full outline-none rounded-[6px] w-full text-md p-1 "
-              onClick={
-  
-                () => {
+              <button
+                className="h-full outline-none rounded-[6px] w-full text-md p-1 "
+                onClick={() => {
                   // redirect to a new window with the url
-                  window.location.href = " https://forms.gle/CuvZS52XrtPbkm6q7";
-                }
-              }
+                  window.location.href = "https://forms.gle/cnjHb84aQkM3hS769";
+                }}
               >
                 <span className="gradient-text flex justify-center items-center">
-                  
-                        Register
-                
+                  Register
                 </span>
               </button>
             </div>
@@ -177,7 +138,7 @@ export default function Shield(props) {
       name: "SHIELD ANTAKSHARI",
       description:
         "For all music enthusiasts among teachers and students, come and participate in this amalgamation of different forms of diverse music styles and genres in a captivating musical antakshari sing-off.",
-        image: "/shield_antak.png",
+      image: "/shield_antak.png",
       date: "6th April",
       time: "10:00pm",
       location: "Gargi Plaza",
@@ -197,7 +158,7 @@ export default function Shield(props) {
       name: "SHIELD ART",
       description:
         "“Beneath the shades and the hues lies obscure imagery that speaks for itself” To all those aspiring artists out there, if you think you don’t get enough exposure or an appropriate platform to express your art then the Shield",
-        image: "/shield_art.png",
+      image: "/shield_art.png",
       date: "5th April",
       time: "11:00pm",
       location: "Gargi Plaza",
@@ -230,8 +191,7 @@ export default function Shield(props) {
     },
     {
       name: "Shield Drama",
-      description:
-        `"Great Theatre and Drama is about challenging how we think and encouraging us to imagine about a world we aspire to live in". Drama is both entertaining and thought-provoking, and has the power to move and inspire audiences.`,
+      description: `"Great Theatre and Drama is about challenging how we think and encouraging us to imagine about a world we aspire to live in". Drama is both entertaining and thought-provoking, and has the power to move and inspire audiences.`,
       image: "/shield_drama.png",
       date: "6th April",
       time: "10:00pm",
@@ -288,8 +248,7 @@ export default function Shield(props) {
     },
     {
       name: "SHIELD DEBATE",
-      description:
-        `“Don't raise your voice, improve your argument".― Desmond Tutu`,
+      description: `“Don't raise your voice, improve your argument".― Desmond Tutu`,
       image: "/shield_debate.png",
       date: "6th April",
       time: "10:00pm",
@@ -307,7 +266,6 @@ export default function Shield(props) {
       . Elimination rounds and Semi Finals will be a week prior to Symphony.
       . Finals will be held during Symphony.`,
     },
-   
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [children, setChildren] = useState();
@@ -349,7 +307,7 @@ export default function Shield(props) {
   }, []);
   return (
     <section
-      className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className}`}
+      className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className} py-10 md:py-0`}
       id="shield"
       ref={sectionRef}
     >
@@ -366,9 +324,11 @@ export default function Shield(props) {
               symphony 2023
             </h1>
           </div>
-          <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[850px]:hidden">
-          KJSCE Shield comprises of the Technical Shield, Indoor and Outdoor Sports Shield and the Cultural Shield.
-          Throughout the year, all the five branches compete against each other to prove their mettle and claim the shield for themselves.
+          <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[1175px]:leading-5 max-[850px]:hidden">
+            KJSCE Shield comprises of the Technical Shield, Indoor and Outdoor
+            Sports Shield and the Cultural Shield. Throughout the year, all the
+            five branches compete against each other to prove their mettle and
+            claim the shield for themselves.
           </p>
           <div
             className="w-[24rem] flex-[0.6] relative floating max-[1175px]:w-[20rem] max-w-[1024px]:w-[18rem] max-w-[768px]:w-[14rem] max-w-[425px]:w-[10rem] max-[850px]:mb-5 max-[280px]:w-[12rem]"
@@ -403,11 +363,15 @@ export default function Shield(props) {
               blurDataURL="UJIqW2$y3FI@pxNdslxWPqR+I?ofEmsSw]R+"
             />
           </div>
-          <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">
+          <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[1175px]:leading-5 max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">
             <span className="min-[850px]:hidden">
-            While the indoor shield and the Outdoor shield takes place throughout the year, the technical shield takes place during Abhiyantriki and the Cultural Shield during Symphony.
+              While the indoor shield and the Outdoor shield takes place
+              throughout the year, the technical shield takes place during
+              Abhiyantriki and the Cultural Shield during Symphony.
             </span>
-            While the indoor shield and the Outdoor shield takes place throughout the year, the technical shield takes place during Abhiyantriki and the Cultural Shield during Symphony.
+            While the indoor shield and the Outdoor shield takes place
+            throughout the year, the technical shield takes place during
+            Abhiyantriki and the Cultural Shield during Symphony.
           </p>
         </div>
       </div>

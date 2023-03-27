@@ -37,7 +37,6 @@ export default function Home(props) {
           alt="ring"
           height={1080}
           width={500}
-          priority={true}
           className="max-w-[85%] min-w-[42%] pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[38%] origin-center"
         />
         <Image
