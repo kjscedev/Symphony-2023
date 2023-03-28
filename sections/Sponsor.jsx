@@ -221,7 +221,7 @@ export default function Sponsor(props) {
                     </h3>
                     <div>
                         <Image
-                            src="/sponsors/ss.png"
+                            src="/sponsors/ss.jpg"
                             alt="Picture of the author"
                             width={300}
                             height={300}
