@@ -48,7 +48,7 @@ const ComingSoon = () => {
     };
     return (
         <div className="md:h-screen z-0 flex items-center justify-center h-[60vh]">
-            <div className="relative py-16 md:h-[70%] flex justify-center items-center flex-col gap-6 md:gap-5 w-[90%] md:w-[80%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00]">
+            <div className="relative py-16 md:h-[70%] h-auto flex justify-center items-center flex-col gap-6 md:gap-5 w-[90%] md:w-[80%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00]">
                 <h1 className="text-7xl max-[335px]:text-5xl md:text-[4.9rem] leading-[0.85] coming-soon text-center">
                     COMING
                     <br />
@@ -57,10 +57,7 @@ const ComingSoon = () => {
                 <h3 className="text-center font-family2 text-md font-normal text-[#F2E6CF] w-[80%] md:w-[70%]">
                     Get ready to step into a world of royalty and elegance! A
                     grand celebration is coming your way, filled with enchanting
-                    festivities and unforgettable memories. Join us as we
-                    immerse ourselves in the majestic ambiance of this royal
-                    affair. Stay tuned for more details on this unforgettable
-                    experience!
+                    festivities and unforgettable memories.
                 </h3>
             </div>
         </div>
