@@ -49,7 +49,10 @@ export default function Syahi(props) {
                         </h1>
                     </div>
                     <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[1175px]:leading-5 max-[850px]:hidden">
-                    The literary festival has a way with the pen and the words that few find it tto deem themseles. Setting up mesmerising workshops, interaction with authors, poets and playwrights, the festival is a treat for the literary enthusiasts.
+                        KK Live, Aadar Malik, Nishant Suri, The Yellow Diary,
+                        Project 91, Anubhav Bassi, Benny Dayal Live & Rahul Dua
+                        you name it! Symphony has been hosting the finest
+                        singers, comedians, and bands since 1987!
                     </p>
                     <div
                         className="w-[24rem] flex-[0.6] relative floating max-[1175px]:w-[20rem] max-w-[1024px]:w-[18rem] max-w-[768px]:w-[14rem] max-w-[425px]:w-[10rem] max-[850px]:mb-5 max-[280px]:w-[12rem]"
@@ -86,9 +89,14 @@ export default function Syahi(props) {
                     </div>
                     <p className="text-justify text-lg flex-[0.3] max-[1175px]:text-md max-[1175px]:leading-5 max-[280px]:text-sm max-[850px]:text-[1rem] max-[850px]:pb-6">
                         <span className="min-[850px]:hidden">
-                        Attracting a diverse audience of readers, writers and enthusiasts. Syahi surpasses beyond prose and verses.
+                            From iconic performances to memorable laughs,
+                            Symphony continues to bring top-notch talent and
+                            unforgettable experiences to audiences for over
+                            three decades!
                         </span>
-                        Attracting a diverse audience of readers, writers and enthusiasts. Syahi surpasses beyond prose and verses.
+                        From iconic performances to memorable laughs, Symphony
+                        continues to bring top-notch talent and unforgettable
+                        experiences to audiences for over three decades!
                     </p>
                 </div>
             </div>
