@@ -41,8 +41,8 @@ export default function Home(props) {
         />
         <Image
           src="/logo_sponsor.png"
-          height={1800}
-          width={1800}
+          height={3800}
+          width={3800}
           priority={true}
           alt="logo"
           className="w-full h-full object-contain z-10 absolute blur-3xl"
