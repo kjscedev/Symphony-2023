@@ -32,13 +32,13 @@ export default function Home(props) {
         <></>
       )}
       <div className="w-[90%] h-[70vh] relative">
-        <Image
+        {/* <Image
           src="/ellipse_ring.png"
           alt="ring"
           height={1080}
           width={500}
           className="max-w-[85%] min-w-[42%] pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[38%] origin-center"
-        />
+        /> */}
         <Image
           src="/logo_sponsor.png"
           height={3800}
