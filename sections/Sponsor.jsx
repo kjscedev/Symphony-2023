@@ -197,7 +197,7 @@ export default function Sponsor(props) {
     }, []);
     return (
         <section
-            className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className} py-10 lg:py-0`}
+            className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className} py-10 lg:py-0 mb-16`}
             ref={sectionRef}
             id={"sponsors"}
         >
