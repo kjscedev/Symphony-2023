@@ -1,5 +1,70 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const Modal = ({ isOpen, onClose, children }) => {
+    useEffect(() => {
+        window.addEventListener("popstate", () => {
+            onClose();
+        });
+    }, []);
+    return (
+        <motion.div
+            className="modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 9999,
+                pointerEvents: isOpen ? "auto" : "none",
+            }}
+            onClick={(e) => {
+                onClose();
+            }}
+        >
+            <div
+                className="relative h-[80vh] flex justify-center items-center w-[60%] bg-[radial-gradient(62.49%_50%_at_50%_50%,#1F1F1F_0%,#0B0B0B_100%)] border-[1px] rounded-[9px] border-[#ffbf00] overflow-hidden max-[1250px]:w-[90%] max-[1250px]:h-[75%] max-[920px]:h-[60%] max-[790px]:w-[95%] max-[740px]:flex-col max-[740px]:w-[60%] max-[740px]:gap-0 max-[740px]:h-[80%] max-[655px]:w-[75%] max-[550px]:h-[100%] max-[550px]:w-[100%] max-[550px]:border-none"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <div
+                    className="absolute top-2 left-2"
+                    onClick={() => onClose()}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                        className="w-[2rem] h-[2rem] cursor-pointer fill-white"
+                    >
+                        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+                </div>
+                <div className="grid h-[85%] overflow-y-auto row-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4 items-center gap-5 w-[95%] sm:w-[70%] max-[850px]:w-[88%]">
+                    {data?.map((d, ind) => (
+                        <div className="w-full h-28 bg-white flex justify-center items-center rounded-[6px]">
+                            <Image
+                                src={d.src}
+                                alt="Sponsor"
+                                width={100}
+                                height={50}
+                                key={ind}
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 let data = [
     {
@@ -195,12 +260,29 @@ export default function Sponsor(props) {
             }
         };
     }, []);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [children, setChildren] = useState();
+
+    const handleOpenModal = () => {
+        setIsOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsOpen(false);
+    };
+
     return (
         <section
             className={`flex flex-col justify-start items-center h-auto max-[850px]:gap-10 ${props?.className} py-10 lg:py-0 mb-16`}
             ref={sectionRef}
             id={"sponsors"}
         >
+            <Modal
+                isOpen={isOpen}
+                onClose={handleCloseModal}
+                children={children}
+            />
             <div className="flex flex-col justify-center items-center gap-10 w-[80%] max-[850px]:w-[70%] max-[600px]:w-[90%] max-[850px]:gap-14 max-[850px]:h-max">
                 <div
                     className="flex w-full justify-center items-center relative translate-y-5 max-[850px]:flex-col max-[850px]:w-[90%] max-[850px]:gap-5 max-[850px]:h-max"
@@ -231,22 +313,15 @@ export default function Sponsor(props) {
                 </div>
 
                 <div className="flex flex-col gap-4 items-center justify-center">
-                    <h3 className="text-2xl font-family2 text-center max-[850px]:text-xl">
-                        PREVIOUS YEAR SPONSORS
-                    </h3>
-                    <div className="grid row-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4 items-center gap-5 w-[95%] sm:w-[70%] max-[850px]:w-[88%]">
-                        {data?.map((d, ind) => (
-                            <div className="w-full h-28 bg-white flex justify-center items-center rounded-[6px]">
-                                <Image
-                                    src={d.src}
-                                    alt="Sponsor"
-                                    width={100}
-                                    height={50}
-                                    key={ind}
-                                    className="w-full h-full object-contain"
-                                />
-                            </div>
-                        ))}
+                    <div className="bordered-button h-full rounded-[6px] w-auto">
+                        <button
+                            className="h-full outline-none rounded-[6px] w-full text-md p-3 px-6 max-[600px]:text-sm"
+                            onClick={() => {
+                                handleOpenModal();
+                            }}
+                        >
+                            <span className="font-normal">SEE PREVIOUS YEAR SPONSORS</span>
+                        </button>
                     </div>
                 </div>
             </div>
